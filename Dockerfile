@@ -1,7 +1,8 @@
 #############################################################
 # Dockerfile to build Interactive Broker TWS container images
 #############################################################
-FROM java:8
+#FROM java:8
+FROM lwieske/java-8:latest
 
 # File Author / Maintainer
 MAINTAINER Andrew Pierce
