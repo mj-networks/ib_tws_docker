@@ -20,9 +20,9 @@ RUN apt-get update && apt-get install -y \
 RUN cd /tmp && \
     wget https://github.com/ib-controller/ib-controller/releases/download/2.14.0/IBController-2.14.0.zip && \
     unzip IBController-2.14.0.zip -d /opt/IBController && \
-    wget https://download2.interactivebrokers.com/installers/tws/latest-standalone/tws-latest-standalone-linux-x64.sh && \
-    chmod +x tws-latest-standalone-linux-x64.sh && \
-    echo "n" | ./tws-latest-standalone-linux-x64.sh && \
+    wget https://download2.interactivebrokers.com/installers/tws/stable-standalone/tws-stable-standalone-linux-x64.sh && \
+    chmod +x tws-stable-standalone-linux-x64.sh && \
+    echo "n" | ./tws-stable-standalone-linux-x64.sh && \
     rm -rf /tmp/* && \
     mv /root/Jts/954 /opt/IBJts
 
