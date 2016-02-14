@@ -2,7 +2,7 @@
 # Dockerfile to build Interactive Broker TWS container images
 #############################################################
 #FROM java:8
-FROM lwieske/java-8:latest
+FROM cogniteev/oracle-java:java8
 
 # File Author / Maintainer
 MAINTAINER Andrew Pierce
