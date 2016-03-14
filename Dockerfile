@@ -10,6 +10,7 @@ MAINTAINER Andrew Pierce
 # Install libs
 RUN apt-get update && apt-get install -y \
     wget \
+    curl \
     unzip \
     gsettings-desktop-schemas \
     xvfb \
