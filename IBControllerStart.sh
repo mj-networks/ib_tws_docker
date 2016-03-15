@@ -27,16 +27,16 @@ TWSDIR=/opt/IBJts/jars
 #   You can find the required information in the UNIX/MacOsX download instructions
 #   for TWS on the IB website, which includes a sample command to start TWS.
 #
-#   You must include everything after "-cp " up to the 
+#   You must include everything after "-cp " up to the
 #   first subsequent space character:
-TWSCP=jts.jar:total.jar
+TWSCP=log4j-1.2.17.jar:twslaunch.jar:jts4launch.jar:total.jar
 
 
-#   Other Java VM options for TWS. You can find this information in the 
+#   Other Java VM options for TWS. You can find this information in the
 #   UNIX/MacosX download instructions for TWS on the IB website. (Note that
-#   jclient.LoginFrame is NOT part of the Java options, nor is anything 
+#   jclient.LoginFrame is NOT part of the Java options, nor is anything
 #   that comes after it, so don't include that here):
-JAVAOPTS='-Xmx1024M -XX:MaxPermSize=256M' 
+JAVAOPTS='-Xmx1024M -XX:MaxPermSize=256M'
 
 #   Start VNC and XVFB
 /etc/init.d/xvfb start
@@ -45,11 +45,11 @@ if [ "$VNC_PASSWORD" ]; then
   x11vnc -storepasswd "$VNC_PASSWORD" /.vnc/passwd > /dev/null
   /etc/init.d/vnc start
 fi
-sleep 1
+sleep 2
 
 #   Run TWS
 pushd $TWSDIR
 # prevent other Java tools interfering with IBController
 unset JAVA_TOOL_OPTIONS
-java -cp  $TWSCP:$IBCDIR/IBController.jar $JAVAOPTS ibcontroller.IBController $IBCINI $TWSUSERID $TWSPASSWORD
+java -cp $TWSCP:$IBCDIR/IBController.jar $JAVAOPTS ibcontroller.IBController $IBCINI $TWSUSERID $TWSPASSWORD
 popd
